@@ -16,9 +16,9 @@ Technologies Used
 5. Version Control: Git and GitHub
 
 How to Use
-1. Clone the repository to your local machine.
-2. Set up the necessary environment and dependencies.
-3. Start the application and access it through a web browser.
+Clone the repository to your local machine.
+Set up the necessary environment and dependencies.
+Start the application and access it through a web browser.
 
 
 Getting Started
