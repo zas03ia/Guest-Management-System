@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guest Management</title>
+    <script type="text/javascript">
+      window.history.forward();
+      function noBack() {
+          window.history.forward();
+      }
+  </script>
+</head>
+<body style="background-color:rgb(224, 220, 220)">
+    <div class="container">
+    <div class="container">
+       
+    <div class="container">
+        <h1 class="mb-4">Guest Responses</h1>
+        <h2 class="mb-4">Guests who responded 'YES'</h2>
+        <%if (yes.length==0) {%>
+          <div class="card mt-4" >
+            <div class="card-body">
+              <h4 class="card-title">No responses to show</h4>
+              <div class="card-subtitle text-muted mb-2">
+              </div>
+            </div>
+             </div>
+          <%} else {%>
+        <% yes.forEach(y => { %>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h4 class="card-title"><%= y.name %></h4>
+              <div class="card-subtitle text-muted mb-2">
+              </div>
+            </div>
+          </div>
+        
+        <% }) %>
+        <%}%>
+        <div style="margin-top: 50px">
+        <h2 class="mb-4">Guests who responded 'NO'</h2>
+        <%if (no.length==0) {%>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h4 class="card-title">No responses to show</h4>
+              <div class="card-subtitle text-muted mb-2">
+              </div>
+             
+            </div>
+            </div>
+          <%} else{%>
+       
+        <% no.forEach(n => { %>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h4 class="card-title"><%= n.name %></h4>
+              <div class="card-subtitle text-muted mb-2">
+              </div>
+             
+            </div>
+          </div>
+        <% }) %>
+        <%}%>
+    </div>
+    <div style="margin-top: 50px">
+        <h2 class="mb-4">Guests who are not sure</h2>
+        <%if (notsure.length==0) {%>
+          <div class="card mt-4" >
+            <div class="card-body">
+              <h4 class="card-title">No responses to show</h4>
+              <div class="card-subtitle text-muted mb-2">
+              </div>
+             
+            </div>
+          </div>
+          <%} else {%>
+        <% notsure.forEach(ns => { %>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h4 class="card-title"><%= ns.name %></h4>
+              <div class="card-subtitle text-muted mb-2">
+              </div>
+            
+            </div>
+          </div>
+
+        <% }) %>
+        <%}%>
+    
+      </div>
+      <a href="/" class="btn btn-info" style="float:right; margin-right:5px">Go back to Homepage</a>
+    
+</body>
+</html>

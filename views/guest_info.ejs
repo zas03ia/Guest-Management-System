@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <title>Guest Management</title>
+    <script type="text/javascript">
+      window.history.forward();
+      function noBack() {
+          window.history.forward();
+      }
+  </script>
+</head>
+<body style="background-color:rgb(224, 220, 220)">
+  <div class="container">
+    <h1 class="mb-4">Guest Management</h1>
+    <h2>Information Section</h2>
+    <form action="/confirm" method="POST" style="margin-bottom:150px">
+      <input type="hidden" id="Number" name="Number" value="<%= Number %>">
+      <input type="hidden" id="eid" name="eid" value="<%- eid %>">
+    <% for (var i =1; i <= Number;  i++ ) { %>
+        <div class="card mt-4" style="background-color:rgb(201, 198, 198)">
+            <div class="card-body">
+              <div class="card-subtitle text-muted mb-2">Field <%= i %> </div>
+              <h4 class="card-title">Guest name</h4>
+              <input required value="" type="text" name="name<%- i%>" id="name<%- i%>" class="form-control">
+              
+              
+              <h4 class="card-title">Guest Email address</h4>
+              <input  required value="" type="email" name="email<%- i %>" id="email<%- i %>" class="form-control">
+              
+            </div>
+        
+          </div>
+   
+    <% } %>
+    <input type="submit" value="Confirm Invitation" class="btn btn-success" style="float:right"/>
+        <a href="/" class="btn btn-info" style="float:right; margin-right:5px"> Cancel</a>
+        
+  </form>
+  </div>
+  
+</body>
+
+</html>
